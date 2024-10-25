@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mangas - Cadastro</title>
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+<body>
+  <!-- Cabeçalho -->
+  <header>
+    <div class="logo">Mangas</div>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="showSection('home')">Início</a></li>
+        <li><a href="#" onclick="showSection('list')">Mangás</a></li>
+        <li><a href="#" onclick="showSection('register')">Cadastrar</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Principal: Home -->
+  <div id="home" class="section">
+    <h1>Bem-vindo ao Mangas</h1>
+    <p>Seu catálogo de mangás favoritos em um só lugar.</p>
+    <button onclick="showSection('list')">Ver Mangás</button>
+  </div>
+
+  <!-- Lista de Mangás -->
+  <div id="list" class="section" style="display: none;">
+    <h2>Mangás Cadastrados</h2>
+    <div class="filter">
+      <label for="filter-category">Filtrar por Categoria:</label>
+      <select id="filter-category" onchange="filterByCategory()">
+        <option value="all">Todos</option>
+        <option value="Romance">Romance</option>
+        <option value="Terror">Terror</option>
+        <option value="Ação">Ação</option>
+        <option value="Fantasia">Fantasia</option>
+      </select>
+    </div>
+    <div id="manga-list" class="grid"></div>
+  </div>
+
+  <!-- Cadastro de Mangá -->
+  <div id="register" class="section" style="display: none;">
+    <h2>Cadastrar Novo Mangá</h2>
+    <form id="manga-form">
+      <label for="title">Título:</label>
+      <input type="text" id="title" required>
+      
+      <label for="author">Autor:</label>
+      <input type="text" id="author" required>
+      
+      <label for="category">Categoria:</label>
+      <select id="category">
+        <option value="Romance">Romance</option>
+        <option value="Terror">Terror</option>
+        <option value="Ação">Ação</option>
+        <option value="Fantasia">Fantasia</option>
+      </select>
+      
+      <label for="description">Descrição:</label>
+      <textarea id="description" required></textarea>
+      
+      <label for="image">Imagem (URL):</label>
+      <input type="url" id="image" required>
+      
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <!-- Seção Detalhes do Mangá -->
+<div id="manga-details" class="section" style="display: none;">
+    <button onclick="showSection('list')">Voltar</button>
+    <div class="details-content">
+      <img id="details-image" src="" alt="Capa do Mangá">
+      <div class="details-info">
+        <h2 id="details-title"></h2>
+        <p><strong>Autor:</strong> <span id="details-author"></span></p>
+        <p><strong>Categoria:</strong> <span id="details-category"></span></p>
+        <p id="details-description"></p>
+      </div>
+    </div>
+  </div>
+  
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2023 Mangas. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="/assets/js/script.js"></script>
+</body>
+</html>
+
+
+
