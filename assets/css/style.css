@@ -136,6 +136,69 @@
   .details-info p {
     margin: 10px 0;
   }
+
+
+#register {
+  display: flex; 
+  flex-direction: column; 
+  align-items: center; 
+  padding: 30px; 
+  background-color: #ffffff; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+  max-width: 500px; 
+  margin: auto; 
+}
+
+#register h2 {
+  margin-bottom: 20px; 
+  color: #dd2211; 
+}
+
+#register label {
+  align-self: flex-start; 
+  margin-bottom: 5px; 
+  color: #333; 
+  font-weight: bold; 
+}
+
+#register input,
+#register select,
+#register textarea {
+  width: 100%; 
+  padding: 12px; 
+  border: 1px solid #ccc; 
+  border-radius: 5px; 
+  margin-bottom: 15px; 
+  font-size: 1em; 
+  transition: border-color 0.3s; 
+}
+
+#register input:focus,
+#register select:focus,
+#register textarea:focus {
+  border-color: #dd2211; 
+  outline: none; 
+}
+
+#register button {
+  width: 100%; 
+  background-color: #ff0055; 
+  color: #fff;
+  padding: 12px; 
+  font-weight: bold; 
+  border: none; 
+  border-radius: 5px; 
+  cursor: pointer; 
+  transition: background-color 0.3s, transform 0.3s; 
+}
+
+#register button:hover {
+  background-color: #ff3377; 
+  transform: scale(1.05); 
+}
+
+
   
   
   /* Rodapé */
