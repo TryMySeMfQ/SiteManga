@@ -52,18 +52,25 @@ function displayMangas(filteredCategory = 'all') {
 
   const filteredMangas = mangas.filter(manga => filteredCategory === 'all' || manga.category === filteredCategory);
 
+  // Se não houver mangás após o filtro, exibe a mensagem de "Nenhum mangá cadastrado"
+  if (filteredMangas.length === 0) {
+      mangaList.innerHTML = '<p class="no-manga-message">Nenhum mangá cadastrado.</p>';
+      return;
+  }
+
   filteredMangas.forEach((manga, index) => {
-    const mangaDiv = document.createElement('div');
-    mangaDiv.className = 'manga-item';
-    mangaDiv.innerHTML = `
-      <img src="${manga.image}" alt="${manga.title}">
-      <h3>${manga.title}</h3>
-      <p>${manga.category}</p>
-    `;
-    mangaDiv.onclick = () => showMangaDetails(index);
-    mangaList.appendChild(mangaDiv);
+      const mangaDiv = document.createElement('div');
+      mangaDiv.className = 'manga-item';
+      mangaDiv.innerHTML = `
+          <img src="${manga.image}" alt="${manga.title}">
+          <h3>${manga.title}</h3>
+          <p>${manga.category}</p>
+      `;
+      mangaDiv.onclick = () => showMangaDetails(index);
+      mangaList.appendChild(mangaDiv);
   });
 }
+
 
 function filterByCategory() {
   const category = document.getElementById('filter-category').value;
