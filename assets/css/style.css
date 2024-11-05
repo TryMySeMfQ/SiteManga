@@ -9,6 +9,7 @@ body {
   font-family: 'Arial', sans-serif;
   color: #4a4a4a;
   background-color: #f9f9fc;
+  font-size: 16px; /* Font size base para desktops */
 }
 
 /* Cabeçalho */
@@ -60,7 +61,7 @@ nav a:hover {
   background-position: center;
   background-repeat: no-repeat;
   height: 100vh;
-  color: #f5f3d9;
+  color: #e63946;
   position: relative;
 }
 
@@ -81,7 +82,6 @@ button:hover {
   transform: scale(1.05);
 }
 
-/* Estilo da Lista de Mangás em Grid */
 /* Estilo da Lista de Mangás em Grid */
 .grid {
   display: grid;
@@ -130,7 +130,6 @@ button:hover {
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-
 /* Mensagem de Nenhum Mangá Cadastrado */
 .no-manga-message {
   text-align: center;
@@ -138,7 +137,6 @@ button:hover {
   color: #888;
   padding: 20px;
 }
-
 
 /* Detalhes do Mangá */
 .details-content {
@@ -242,5 +240,107 @@ footer {
   font-size: 0.9em;
   color: #ccc;
 }
+
+/* Media Queries para Responsividade */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Diminui o tamanho da fonte em dispositivos menores */
+  }
+
+  /* Cabeçalho Responsivo */
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .section {
+    padding: 40px 15px;
+  }
+
+  /* Hero Section (Home) */
+  #home {
+    background-position: top;
+    padding: 20px;
+    text-align: center;
+  }
+
+  button {
+    width: 100%; /* Botões ocupam largura total em dispositivos móveis */
+  }
+
+  /* Detalhes do Mangá */
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  #details-image {
+    width: 100%;
+    max-width: 300px; /* Ajuste na largura máxima da imagem */
+  }
+
+  .details-info h2 {
+    font-size: 1.4em;
+  }
+
+  .details-info p {
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 992px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+  }
+
+  .manga-item {
+    max-width: 150px; /* Ajuste na largura máxima do card */
+  }
+}
+
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr; /* Cada card ocupa a largura total em telas menores */
+  }
+
+  .manga-item {
+    max-width: 100%;
+  }
+
+  .manga-item img {
+    height: 180px; /* Ajusta a altura da imagem para dispositivos móveis */
+  }
+
+  /* Formulário de Cadastro */
+  #register {
+    padding: 20px;
+  }
+
+  #register input,
+  #register select,
+  #register textarea {
+    font-size: 0.9em;
+  }
+
+  #register button {
+    font-size: 1em;
+  }
+
+  /* Rodapé */
+  footer {
+    font-size: 0.8em;
+    padding: 15px;
+  }
+}
+
+
 
   
